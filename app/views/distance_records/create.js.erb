@@ -1,0 +1,13 @@
+
+<% if @distance_record.valid? %>
+  $('#error-explanation').html('');
+  $('#error-explanation').hide();
+  document.getElementById('distance_record_distance_in_between').value = "<%= @distance_record.distance_in_between %>"
+<% else %>
+  $('#error-explanation').html('');
+  $('#error-explanation').show();
+  $('#error-explanation').append("<h4> <%= escape_javascript(I18n.t('common.forms.show_errors')) %></h4>");
+  <% @distance_record.errors.full_messages.each do |message| %>
+    $('#error-explanation').append("<li> <%= escape_javascript(message.html_safe) %> </li>");
+  <% end %>
+<% end %>

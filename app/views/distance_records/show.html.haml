@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-lg-8.offset-lg-2.col-sm-12
+
+      %p#notice= notice
+      %p
+        %strong Initial point:
+        = @distance_record.initial_point
+      %p
+        %strong Final point:
+        = @distance_record.final_point
+      %p
+        %strong Distance in between:
+        = @distance_record.distance_in_between
+      = link_to 'Edit', edit_distance_record_path(@distance_record)
+      |
+      = link_to 'Back', distance_records_path

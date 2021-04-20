@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: distance_records
+#
+#  id                  :bigint           not null, primary key
+#  initial_point       :string
+#  final_point         :string
+#  distance_in_between :float
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+one:
+  initial_point: MyString
+  final_point: MyString
+  distance_in_between: 1.5
+
+two:
+  initial_point: MyString
+  final_point: MyString
+  distance_in_between: 1.5
