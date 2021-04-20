@@ -1,9 +1,9 @@
 class DistanceRecordsController < ApplicationController
   before_action :set_distance_record, only: %i[ show edit update destroy ]
-
+  after_action :load_last_records, only: %i[ create ]
   # GET /distance_records or /distance_records.json
   def index
-    @distance_records = DistanceRecord.all.order("created_at Desc").paginate(page: params[:page], per_page: 1)
+    @distance_records = DistanceRecord.all.order("created_at Desc").paginate(page: params[:page], per_page: 5)
   end
 
   # GET /distance_records/1 or /distance_records/1.json
@@ -25,15 +25,6 @@ class DistanceRecordsController < ApplicationController
     respond_to do |format|
       format.js
     end
-    # respond_to do |format|
-    #   if @distance_record.save
-    #     format.html { redirect_to @distance_record, notice: "Distance record was successfully created." }
-    #     format.json { render :show, status: :created, location: @distance_record }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @distance_record.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /distance_records/1 or /distance_records/1.json
@@ -62,6 +53,10 @@ class DistanceRecordsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_distance_record
       @distance_record = DistanceRecord.find(params[:id])
+    end
+
+    def load_last_records
+      @distance_records_list = DistanceRecord.last(5)
     end
 
     # Only allow a list of trusted parameters through.

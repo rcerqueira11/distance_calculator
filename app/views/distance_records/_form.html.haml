@@ -7,25 +7,22 @@
     -#   - distance_record.errors.full_messages.each do |message|
     -#     %li= message
   .row
-    .form-row
-      .form-group.col-md-4
-        = form.label :initial_point
-        = form.text_field :initial_point, class: 'form-control', required: 'required', value: "Plaza San Martin, Lima, Peru"
-        %small Texto en pequeño
-      .form-group.col-md-4
-        = form.label :final_point
-        = form.text_field :final_point, class: 'form-control', required: 'required', value: "Palacio de Justicia, Lima, Peru"
-      .form-group.col-md-4
-        = form.label :distance_in_between
-        = form.text_field :distance_in_between, class: 'form-control', disabled: true
-
-    .form-row.clear
-      .form-group.col-md-6
-        = form.submit "Guardar", class: "btn btn-primary btn-block btn-md"
-      .form-group.col-md-4
-        %button.btn.btn-outline-secondary{type: "button", onclick: 'clearSearchBtn()'}
-          Limpiar
-          -# =I18n.t('views.commons.button.clean')
+    .form-group.col-md-4
+      = form.label :initial_point
+      = form.text_field :initial_point, class: 'form-control', required: 'required', value: "Plaza San Martin, Lima, Peru"
+    .form-group.col-md-4
+      = form.label :final_point
+      = form.text_field :final_point, class: 'form-control', required: 'required', value: "Palacio de Justicia, Lima, Peru"
+    .form-group.col-md-4
+      = form.label :distance_in_between
+      = form.text_field :distance_in_between, class: 'form-control', disabled: true
+  .row
+    .form-group.col-md-4.offset-md-4
+      %button.btn.btn-block.btn-md.btn-outline-secondary{type: "button", onclick: 'clearSearchBtn()'}
+        Limpiar
+        -# =I18n.t('views.commons.button.clean')
+    .form-group.col-md-4
+      = form.submit "Guardar", class: "btn btn-primary btn-block btn-md", disable_with: "Submitting..."
 
 :javascript
 
@@ -36,4 +33,5 @@
   function clearSearchBtn(){
     clearInput('distance_record_initial_point');
     clearInput('distance_record_final_point');
+    clearInput('distance_record_distance_in_between');
   }

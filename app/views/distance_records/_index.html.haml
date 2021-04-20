@@ -1,0 +1,19 @@
+.table-responsive-sm
+  %table.table
+    %thead
+      %tr
+        %th Initial point
+        %th Final point
+        %th Distance in between
+        %th Options
+    %tbody
+      -# - @distance_records.each do |distance_record|
+      - distance_records.each_with_index do |distance_record, i|
+        %tr
+          %td= distance_record.initial_point
+          %td= distance_record.final_point
+          %td= distance_record.distance_in_between
+          -# %td= link_to 'Show', distance_record
+          -# %td= link_to 'Edit', edit_distance_record_path(distance_record)
+          %td= link_to 'Destroy', distance_record, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/

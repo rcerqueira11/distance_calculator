@@ -12,7 +12,7 @@ module DistanceRecords
 
         def call
 
-          if calculate_distance
+          if calculate_distance_in_km
             instance_distance_record
             save_distance_record
           else
@@ -29,7 +29,7 @@ module DistanceRecords
           @distance_record.distance_in_between = @distance
         end
 
-        def calculate_distance
+        def calculate_distance_in_km
           initial_point = GeoRb::Location.lookup(@distance_record_params[:initial_point])
           final_point = GeoRb::Location.lookup(@distance_record_params[:final_point])
           @distance = initial_point&.distance_to(final_point)&.km

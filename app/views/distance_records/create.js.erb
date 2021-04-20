@@ -1,5 +1,6 @@
 
 <% if @distance_record.valid? %>
+  <% byebug %>
   $('#error-explanation').html('');
   $('#error-explanation').hide();
   document.getElementById('distance_record_distance_in_between').value = "<%= @distance_record.distance_in_between %>"

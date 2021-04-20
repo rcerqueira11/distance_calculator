@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.offset-lg-2.col-sm-12
+    .col-lg-10.offset-lg-1.col-sm-12
       .card
         .card-body
           %h1 New Distance Record
@@ -8,6 +8,8 @@
             .col-md-12
               -# form
               = render 'form', distance_record: @distance_record
+
+            .col-md-12
 
               -# index 5
               = link_to 'Ver historial completo', distance_records_path
