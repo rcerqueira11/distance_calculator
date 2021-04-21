@@ -16,7 +16,7 @@ module DistanceRecords
             instance_distance_record
             save_distance_record
           else
-            @response[:error] = "Ocurrio un error calculado la distancia entre los dos puntos, por favor verifique las direcciones e intente de nuevo."
+            @response[:error] = I18n.t('views.distance_record.form.create_error')
           end
 
           return @distance_record, @response
@@ -30,16 +30,20 @@ module DistanceRecords
         end
 
         def calculate_distance_in_km
-          initial_point = GeoRb::Location.lookup(@distance_record_params[:initial_point])
-          final_point = GeoRb::Location.lookup(@distance_record_params[:final_point])
-          @distance = initial_point&.distance_to(final_point)&.km
+          begin
+            initial_point = GeoRb::Location.lookup(@distance_record_params[:initial_point])
+            final_point = GeoRb::Location.lookup(@distance_record_params[:final_point])
+            @distance = initial_point&.distance_to(final_point)&.km
+          rescue => e
+            @response[:error] = I18n.t('views.distance_record.form.create_error')
+          end
         end
 
         def save_distance_record
           if @distance_record.save
             @response[:success]= "Guardado correctamente"
           else
-            @response[:error] = "No se pudo guardar"
+            @response[:error] = I18n.t('views.distance_record.form.create_error')
           end
         end
 

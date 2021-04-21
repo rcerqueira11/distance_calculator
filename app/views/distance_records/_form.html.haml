@@ -13,10 +13,9 @@
   .row
     .form-group.col-md-4.offset-md-4
       %button.btn.btn-block.btn-md.btn-outline-secondary{type: "button", onclick: 'clearSearchBtn()'}
-        Limpiar
-        -# =I18n.t('views.commons.button.clean')
+        = I18n.t('views.commons.button.clean')
     .form-group.col-md-4
-      = form.submit "Guardar", class: "btn btn-primary btn-block btn-md", disable_with: "Submitting..."
+      = form.submit I18n.t('views.commons.button.save'), class: "btn btn-primary btn-block btn-md", disable_with: "Submitting..."
 
 :javascript
 

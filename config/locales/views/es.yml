@@ -1,13 +1,14 @@
 es:
   views:
-    common:
+    commons:
       button:
         clean: Limpiar
-        create: Crear
+        save: Guardar
     distance_record:
       form:
         index_btn: Ver historial completo
         title: Crear nueva registro de distancia
+        create_error: Ocurrio un error calculando la distancia entre los dos puntos, por favor verifique las direcciones e intente de nuevo.
       index:
         title: Historial de distancias consultadas
         table_heads:
