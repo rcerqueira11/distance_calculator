@@ -10,4 +10,6 @@
 #  updated_at          :datetime         not null
 #
 class DistanceRecord < ApplicationRecord
+  validates_presence_of [:initial_point, :final_point, :distance_in_between]
+
 end

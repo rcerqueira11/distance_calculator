@@ -1,0 +1,19 @@
+es:
+  views:
+    common:
+      button:
+        clean: Limpiar
+        create: Crear
+    distance_record:
+      form:
+        index_btn: Ver historial completo
+        title: Crear nueva registro de distancia
+      index:
+        title: Historial de distancias consultadas
+        table_heads:
+          distance_in_between: Distacia
+          final_point: Dirección Destino
+          initial_point: Dirección Inicio
+          options: Opciones
+        new_btn: Crear nueva registro de distancia
+        delete_question: ¿Estás seguro de eliminar este registro de distancia?

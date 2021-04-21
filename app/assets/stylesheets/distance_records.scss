@@ -29,3 +29,11 @@ body{
 .pagination {
   justify-content: center;
 }
+
+.no-underline {
+  &:hover,
+  &:active,
+  &:visited {
+    text-decoration: none !important;
+  }
+}

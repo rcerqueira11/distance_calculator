@@ -1,18 +1,12 @@
 = form_for [@distace_record, DistanceRecord.new], remote: true, method: :post do |form|
   #error-explanation.alert.alert-danger{style: 'display: none'}
-    -# %h2
-    -#   = pluralize(distance_record.errors.count, "error")
-    -#   prohibited this distance_record from being saved:
-    -# %ul
-    -#   - distance_record.errors.full_messages.each do |message|
-    -#     %li= message
   .row
     .form-group.col-md-4
       = form.label :initial_point
-      = form.text_field :initial_point, class: 'form-control', required: 'required', value: "Plaza San Martin, Lima, Peru"
+      = form.text_field :initial_point, class: 'form-control', required: 'required', placeholder: "Santiago centro"
     .form-group.col-md-4
       = form.label :final_point
-      = form.text_field :final_point, class: 'form-control', required: 'required', value: "Palacio de Justicia, Lima, Peru"
+      = form.text_field :final_point, class: 'form-control', required: 'required', placeholder: "Viña del mar"
     .form-group.col-md-4
       = form.label :distance_in_between
       = form.text_field :distance_in_between, class: 'form-control', disabled: true

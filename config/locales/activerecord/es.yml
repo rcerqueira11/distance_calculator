@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      distance_record:
+        initial_point: Dirección Inicio
+        final_point: Dirección Destino
+        distance_in_between: Distacia

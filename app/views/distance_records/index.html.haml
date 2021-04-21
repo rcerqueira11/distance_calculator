@@ -4,8 +4,8 @@
       .card
         .card-body
           %p#notice= notice
-          %h1 Distance Records
+          %h1= I18n.t('views.distance_record.index.title')
           = render partial: "index", locals: {distance_records: @distance_records}
           .center
             = automated_paginater(@distance_records)
-          = link_to 'New Distance Record', new_distance_record_path
+          = link_to I18n.t('views.distance_record.index.new_btn'), new_distance_record_path
