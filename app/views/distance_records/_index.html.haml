@@ -15,6 +15,5 @@
           %td= distance_record.final_point
           %td= distance_record.distance_in_between
           %td
-            = link_to distance_record_path(distance_record), class: "no-underline", method: :delete, data: { confirm: I18n.t('views.distance_record.index.delete_question') } do
-              %span.fa.fa-trash
+            = link_to I18n.t('views.distance_record.index.delete_record'), distance_record_path(distance_record), method: :delete, data: { confirm: I18n.t('views.distance_record.index.delete_question') }
   %br/

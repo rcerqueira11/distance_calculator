@@ -10,11 +10,12 @@ es:
         title: Crear nueva registro de distancia
         create_error: Ocurrio un error calculando la distancia entre los dos puntos, por favor verifique las direcciones e intente de nuevo.
       index:
+        delete_record: Eliminar
+        delete_question: ¿Estás seguro de eliminar este registro de distancia?
+        new_btn: Crear nueva registro de distancia
         title: Historial de distancias consultadas
         table_heads:
           distance_in_between: Distacia
           final_point: Dirección Destino
           initial_point: Dirección Inicio
           options: Opciones
-        new_btn: Crear nueva registro de distancia
-        delete_question: ¿Estás seguro de eliminar este registro de distancia?
