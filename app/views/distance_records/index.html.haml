@@ -6,5 +6,6 @@
           %p#notice= notice
           %h1 Distance Records
           = render partial: "index", locals: {distance_records: @distance_records}
-          = automated_paginater(@distance_records)
+          .center
+            = automated_paginater(@distance_records)
           = link_to 'New Distance Record', new_distance_record_path
